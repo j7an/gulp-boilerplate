@@ -35,9 +35,9 @@
     "gulp-strip-debug": "^1.1.0",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8"
-  },
+  }/* ,
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ] */
 }

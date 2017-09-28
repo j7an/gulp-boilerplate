@@ -120,11 +120,11 @@ gulp.task('serve:dist', ['js', 'css', 'html'], function () {
     port: 3000
   });
 
-  gulp.watch([folder.build + '**/*.html'], reload);
-  gulp.watch([folder.build + 'css/**/*.css'], ['css', reload]);
-  gulp.watch([folder.build + 'scss/**/*.scss'], ['css'], reload);
-  gulp.watch([folder.build + 'js/**/*.js'], ['js'], reload);
-  gulp.watch([folder.build + 'images/**/*'], reload);
+  gulp.watch([folder.src + '**/*.html'], reload);
+  gulp.watch([folder.src + 'css/**/*.css'], ['css', reload]);
+  gulp.watch([folder.src + 'scss/**/*.scss'], ['css'], reload);
+  gulp.watch([folder.src + 'js/**/*.js'], ['js'], reload);
+  gulp.watch([folder.src + 'images/**/*'], reload);
 
 });
 

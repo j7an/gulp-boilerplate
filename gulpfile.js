@@ -70,7 +70,9 @@ gulp.task('sass', function () {
     out = folder.src + 'css/';
   return gulp.src(folder.src + 'scss/**/*.scss')
     .pipe(newer(out))
+    .pipe(sourcemaps.init())
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(out))
 });
 
@@ -118,11 +120,11 @@ gulp.task('serve:dist', ['js', 'css', 'html'], function () {
     port: 3000
   });
 
-  gulp.watch([folder.src + '**/*.html'], reload);
-  gulp.watch([folder.src + 'css/**/*.css'], ['css', reload]);
-  gulp.watch([folder.src + 'scss/**/*.scss'], ['css'], reload);
-  gulp.watch([folder.src + 'js/**/*.js'], ['js'], reload);
-  gulp.watch([folder.src + 'images/**/*'], reload);
+  gulp.watch([folder.build + '**/*.html'], reload);
+  gulp.watch([folder.build + 'css/**/*.css'], ['css', reload]);
+  gulp.watch([folder.build + 'scss/**/*.scss'], ['css'], reload);
+  gulp.watch([folder.build + 'js/**/*.js'], ['js'], reload);
+  gulp.watch([folder.build + 'images/**/*'], reload);
 
 });
 
